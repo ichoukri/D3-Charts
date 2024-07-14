@@ -74,3 +74,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.debug {
+  border: 1px solid red !important;
+  & > * {
+    border: 1px solid green !important;
+    & > * {
+      border: 1px solid blue !important;
+    }
+  }
+}

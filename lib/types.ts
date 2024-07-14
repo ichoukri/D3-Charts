@@ -1,0 +1,1 @@
+export type sizeType = `${number}px` | `${number}%` | number;
