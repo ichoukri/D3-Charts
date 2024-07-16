@@ -48,7 +48,6 @@ export const D3LineChart = ({ className = "" }: D3LineChartProps) => {
       .domain(d3.extent(dataSet, xAxisAccesor) as any)
       .range([0, boundedWidth]);
 
-    console.log(d3.extent(dataSet, yAxisAccesor));
     const yScale = d3
       .scaleLinear()
       .domain(d3.extent(dataSet, yAxisAccesor) as any)

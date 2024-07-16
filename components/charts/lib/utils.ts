@@ -28,22 +28,25 @@ export const createBottomXAxis = (
   bounded: d3.Selection<SVGGElement, unknown, null, undefined>,
   scale: d3.AxisScale<d3.NumberValue>,
   xOfsset: number = 0,
-  yOfsset: number = 0
+  yOfsset: number = 0,
+  ticksCount: number | undefined = undefined
 ) => {
-  return bounded
-    .append("g")
-    .call(d3.axisBottom(scale))
-    .attr("transform", `translate(${xOfsset}, ${yOfsset})`);
+  const axis = d3.axisBottom(scale);
+  if (ticksCount !== undefined)
+    axis.ticks(ticksCount)
+
+  return bounded.append("g").call(axis).style("transform", `translate(${xOfsset}px, ${yOfsset}px)`);
 };
 
 export const createLeftYAxis = (
   bounded: d3.Selection<SVGGElement, unknown, null, undefined>,
   scale: d3.AxisScale<d3.NumberValue>,
   xOfsset: number = 0,
-  yOfsset: number = 0
+  yOfsset: number = 0,
+  ticksCount: number | undefined = undefined
 ) => {
-  return bounded
-    .append("g")
-    .call(d3.axisLeft(scale))
-    .attr("transform", `translate(${xOfsset}, ${yOfsset})`);
+  const axis = d3.axisLeft(scale);
+  if (ticksCount !== undefined)
+    axis.ticks(ticksCount)
+  return bounded.append("g").call(axis).style("transform", `translate(${xOfsset}px, ${yOfsset}px)`);
 };
