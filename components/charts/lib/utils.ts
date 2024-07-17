@@ -11,6 +11,8 @@ export const createWrapperSvg = (
     .append("svg")
     .attr("width", width)
     .attr("height", height)
+    .attr("role", "figure") // for accessibility
+    .attr("tabindex", "0") // for accessibility
 };
 
 export const createChartBounded = (
