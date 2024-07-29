@@ -1,0 +1,1 @@
+export type DataKey<T> = string | number | ((obj: T) => any);
