@@ -6,6 +6,10 @@ import React, { createContext, useEffect, useState } from "react";
 export const ChartContext = createContext<{
   width: number | undefined;
   height: number | undefined;
+  boundsWidth: number | undefined;
+  setBoundsWidth: React.Dispatch<React.SetStateAction<number | undefined>>;
+  boundsHeight: number | undefined;
+  setBoundsHeight: React.Dispatch<React.SetStateAction<number | undefined>>;
   data: any[] | undefined;
   setData: React.Dispatch<React.SetStateAction<any[]>>;
 } | null>(null);
@@ -21,6 +25,10 @@ export const ChartContainer = ({
 }: ChartContainerProps) => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
+  const [boundsWidth, setBoundsWidth] = useState<number | undefined>(undefined);
+  const [boundsHeight, setBoundsHeight] = useState<number | undefined>(
+    undefined
+  );
   const [data, setData] = useState<any[]>([]);
   const containerRef = React.useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -44,6 +52,10 @@ export const ChartContainer = ({
         height,
         data,
         setData,
+        boundsWidth,
+        setBoundsWidth,
+        boundsHeight,
+        setBoundsHeight,
       }}
     >
       <div

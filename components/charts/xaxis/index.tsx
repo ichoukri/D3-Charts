@@ -1,4 +1,5 @@
-export type DataKey<T> = string | number | ((obj: T) => any);
+import React from "react";
+import { DataKey } from "../lib/types";
 
 export interface BaseAxisProps {
   type?: "number" | "category";
@@ -9,3 +10,7 @@ export interface BaseAxisProps {
   unit?: string | number;
   className?: string;
 }
+
+export const Xaxis = () => {
+  return <div>Xaxis</div>;
+};

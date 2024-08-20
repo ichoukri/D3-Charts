@@ -13,6 +13,7 @@ const chartData = [
   { month: "June", desktop: 214, mobile: 140 },
 ];
 
+
 const page = () => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
